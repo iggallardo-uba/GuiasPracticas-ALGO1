@@ -40,9 +40,19 @@ maximo3 x y z | x > y && x > z = x
 algunoEs0 :: Integer -> Integer -> Bool
 algunoEs0 x y = x == 0 || y == 0
 
+algunoEs0PM :: Integer -> Integer -> Bool --Con Pattern Maching
+algunoEs0PM 0 _ = True
+algunoEs0PM _ 0 = True
+algunoEs0PM _ _ = False
+
+
 --E
 ambosEs0 :: Integer -> Integer -> Bool
 ambosEs0 x y = x == 0 && y == 0
+
+ambosEs0PM :: Integer -> Integer -> Bool --Con Pattern Maching
+ambosEs0PM 0 0 = True
+ambosEs0PM _ _ = False
 
 --F
 mismoIntervalo :: Integer -> Integer -> Bool
@@ -72,3 +82,14 @@ digitoUnidades x = mod x 10
 --J
 digitoDecenas :: Integer -> Integer
 digitoDecenas x = div (mod x 100) 10
+
+--EJERCICIO 3 
+--Revisa el ejercicio y no te fijes tanto en la especificacion
+estanRelacionados :: Integer -> Integer -> Bool
+estanRelacionados x y | mod x y == 0 = True
+                      | otherwise = False
+
+--EJERCICIO 4
+
+--prodInt (Integer, Integer) -> (Integer, Integer) -> Float
+--prodInt x y = x[0]
