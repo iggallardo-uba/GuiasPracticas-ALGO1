@@ -1,3 +1,5 @@
+--Ejemplo Clase
+
 doubleMe x = x + x
 
 --EJERCICIO 1
@@ -15,11 +17,11 @@ g 16 = 16
 g 131 = 1
 
 --C
-fog :: Integer -> Integer
-fog x = f(g x)
+h :: Integer -> Integer
+h x = f(g x)
 
-gof :: Integer -> Integer
-gof x = g(f x)
+k :: Integer -> Integer
+k x = g(f x)
 
 --EJERCICIO 2
 
@@ -90,6 +92,8 @@ estanRelacionados x y | mod x y == 0 = True
                       | otherwise = False
 
 --EJERCICIO 4
+
+--siguiente clase ya que ni idea de duplas
 
 --prodInt (Integer, Integer) -> (Integer, Integer) -> Float
 --prodInt x y = x[0]
