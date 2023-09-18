@@ -84,6 +84,8 @@ quitarTodos _ [] = []
 quitarTodos x (y : ys) | x == y = quitarTodos x ys
                        | otherwise = y : (quitarTodos x ys)
 
+--7
+
 --Ejercicio 3
 --1
 sumatoria :: [Integer] -> Integer
