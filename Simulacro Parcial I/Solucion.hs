@@ -56,12 +56,18 @@ amigosDe x ((y1, y2) : ys)
 
 --4
 personaConMasAmigos :: [(String, String)] -> String
-personaConMasAmigos rel = personaConMasAmigosAux rel (personas rel)
+personaConMasAmigos rel = personaConMasAmigosAux rel (personas rel) ""
 
-personaConMasAmigosAux :: [(String, String)] -> [String] -> String
-personaConMasAmigosAux rel [x] = x
-personaConMasAmigosAux rel (x : (y : ys))
- | 
+personaConMasAmigosAux :: [(String, String)] -> [String] -> String -> String
+personaConMasAmigosAux rel (x : xs) "" = personaConMasAmigosAux rel xs x
+personaConMasAmigosAux _ [] x = x
+personaConMasAmigosAux rel (x : xs) y 
+ | length(amigosDe x rel) > length(amigosDe y rel) = personaConMasAmigosAux rel xs x
+ | otherwise = personaConMasAmigosAux rel xs y
+
+--length :: (Eq t) => [t] -> Integer
+--length [] = 0
+--length [x : xs] = 1 + length xs
 
 --funcAux :: [(String, String)] -> [String] -> [Integer] -> [Integer]
 --funcAux [] x y =  y --maximo x y "" 0
