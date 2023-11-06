@@ -1,0 +1,2 @@
+no es comentario
+texto     #Pero con comentario que no se borra

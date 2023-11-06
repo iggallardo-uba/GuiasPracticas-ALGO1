@@ -1,7 +1,9 @@
 from funciones.funciones_ej1 import *
+from funciones.funciones_ej2_7 import *
+from funciones.funciones_ej19_23 import *
 
 
-path_archivos = "/home/gallardo-uba/Documents/UBA/GuiasPracticas-ALGO1/Guias/Guia 8/archivos/"
+path_archivos = "/home/gallardo-uba/Documents/UBA/GuiasPracticas-ALGO1/Guias/Guia_8/archivos/"
 
 salida = 1
 
@@ -30,120 +32,153 @@ while(salida == 1):
                 
                 archivo = open(path_archivos + "ejercicio1_1_input.txt", "r")
                 print(archivo.read())
+                archivo.close()
                 
                 print("El archivo tiene un total de " + str(contarLineas("ejercicio1_1_input.txt")) + " lineas")
                 
                 input("Presione enter para continuar")
                 
             if(ejercicio == 2):
-                print("Lista a comprobar [2,8,4]")
+                print("el archivo de prueba es: ")
                 
-                print(divideATodos([2,8,4],int(input("Ingrese numero a ver si divide: "))))
+                archivo = open(path_archivos + "ejercicio1_2_input.txt", "r")
+                print(archivo.read())
+                archivo.close()
                 
-                input("Presione enter para continuar")   
-                             
-            if(ejercicio == 3):
-                print("Lista a sumar [1,2,3,4,5]")
-                
-                print(sumaTotal([1,2,3,4,5]))
+                print(existePalabra("ejercicio1_2_input.txt", input("Ingresar palabra a buscar: ")))
                 
                 input("Presione enter para continuar")
-
+                             
+            if(ejercicio == 3):
+                print("el archivo de prueba es: ")
+                
+                archivo = open(path_archivos + "ejercicio1_3_input.txt", "r")
+                print(archivo.read())
+                archivo.close()
+                
+                print(cantidadApariciones("ejercicio1_3_input.txt", input("Ingresar palabra a buscar: ")))
+                
+                input("Presione enter para continuar")
+                
     if(usuario == 2):
         salida_ejercicio = 1
         
         while(salida_ejercicio == 1):
-            print("Los siguientes son los ejercicios del punto 2, ingrese ejercicio a ver. Para salir ingrese 0")
-            print("1-Cambiar numero en pos. par a 0 \n2-Borrar numero en pos. par \n3-Sacar vocales en palabra \n4-Cambiar vocales por ''_'' \n5-Dar vuelta palabra \n6-Eliominar letras repetidas")
+            print("Funcion de clonar archivo de texto sin comentarios")
+                
+            print("el archivo de prueba es: ")
+                
+            archivo = open(path_archivos + "ejercicio2_1_input.txt", "r")
+            print(archivo.read())
+            archivo.close()
             
-            ejercicio = int(input("Num. Ejercicio: "))
+            clonarSinComentarios("ejercicio2_1_input.txt")
             
-            if(ejercicio == 0):
-                salida_ejercicio = 0
-                
-            if(ejercicio == 1):
-                ejercicio_2_1 = [0,1,2,3,4,5,6]
-                
-                print("lista de numeros a usar " + str(ejercicio_2_1) + " modo inout")
-                print("ver codigo para ver diferencia")
-                
-                borrarPosParInout(ejercicio_2_1)
-                
-                print(ejercicio_2_1)
-                
-                input("Presione enter para continuar")    
+            print("El archivo sin comentarios y clonado es: ")
             
-            if(ejercicio == 2):
-                ejercicio_2_2 = [0,1,2,3,4,5,6]
-                
-                print("lista de numeros a usar " + str(ejercicio_2_2) + " modo in")
-                print("ver codigo para ver diferencia")
-                
-                print(borrarPosParIn(ejercicio_2_2))
-                
-                print("var inicio:" + str(ejercicio_2_2))
-                
-                input("Presione enter para continuar")        
-                
-            if(ejercicio == 3):
-                print(sacarVocales(input("Ingresar palabra a sacar sus vocales: ")))
-                
-                input("Presione enter para continuar")        
-                
-            if(ejercicio == 4):
-                print(reemplazarVocales(input("Ingresar palabra a reemplazar sus vocales: ")))
-                
-                input("Presione enter para continuar")      
+            archivo = open(path_archivos + "ejercicio2_1_output.txt", "r")
+            print(archivo.read())
+            archivo.close()
             
-            if(ejercicio == 5):
-                print(darVueltaPalabra(input("Ingresar palabra a dar vuelta: ")))
-                
-                input("Presione enter para continuar")    
+            input("Presione enter para salir")    
             
-            if(ejercicio == 6):
-                print(eliminarRepetidos(input("Ingresar palabra a borrar letras repetidas: ")))
-                
-                input("Presione enter para continuar")        
-                
+            salida_ejercicio = 0
+         
     if(usuario == 3):
-        salida_ejercicio = 1
+        print("Funcion de dar vuelta archivo de texto y clonarlo")
+            
+        print("el archivo de prueba es: ")
+            
+        archivo = open(path_archivos + "ejercicio3_1_input.txt", "r")
+        print(archivo.read())
+        archivo.close()
         
-        while(salida_ejercicio == 1):
-            print("Los siguientes son los ejercicios del punto 3, ingrese ejercicio a ver. Para salir ingrese 0")
-            print("1-alguno es 0 \n2-ambos son 0 \n3-es nombre largo \n4-es_bisiesto")
-            
-            
-            input("Presione enter para continuar")
+        reverso("ejercicio3_1_input.txt")
+        
+        print("El archivo dado vuelta y clonado es: ")
+        
+        archivo = open(path_archivos + "ejercicio3_1_output.txt", "r")
+        print(archivo.read())
+        archivo.close()
+        
+        input("Presione enter para salir")    
                 
     if(usuario == 4):
-        salida_ejercicio = 1
+        print("Añadir frase a final de archivo")
+            
+        print("el archivo de prueba es: ")
+            
+        archivo = open(path_archivos + "ejercicio4_1_input.txt", "r")
+        print(archivo.read())
+        archivo.close()
         
-        while(salida_ejercicio == 1):
-            print("Los siguientes son los ejercicios del punto 3, ingrese ejercicio a ver. Para salir ingrese 0")
-            print("1-peso pino \n2-es peso util pino 0 \n3-sirve el pino")
-            
-            ejercicio = int(input("Num. Ejercicio: "))
-            
-            if(ejercicio == 0):
-                salida_ejercicio = 0
-                
-            if(ejercicio == 1):
-                
-            
-                input("Presione enter para continuar")
+        agregarFraseFinal("ejercicio4_1_input.txt", "esta frase")
+        
+        print("El archivo con frase es: ")
+        
+        archivo = open(path_archivos + "ejercicio4_1_input.txt", "r")
+        print(archivo.read())
+        archivo.close()
+        
+        input("Presione enter para salir")    
+        
+        salida_ejercicio = 0
 
     if(usuario == 5):
+        print("Añadir frase a final de archivo")
+                
+        print("el archivo de prueba es: ")
+            
+        archivo = open(path_archivos + "ejercicio5_1_input.txt", "r")
+        print(archivo.read())
+        archivo.close()
+        
+        agregarFraseInicio("ejercicio5_1_input.txt", "esta frase")
+        
+        print("El archivo con frase es: ")
+        
+        archivo = open(path_archivos + "ejercicio5_1_input.txt", "r")
+        print(archivo.read())
+        archivo.close()
+        
+        input("Presione enter para salir") 
+        
+    if(usuario == 6):
+        print("Mucha paja ver como es binario") 
+        
+    if(usuario == 7):
+        print("CSV, hay que ir por linea, despues dividir el archivo por comas y formatear cada parte y esta practicamente")
+        
+    if(usuario == 23):
         salida_ejercicio = 1
         
+        inventario = {}
+        
         while(salida_ejercicio == 1):
-            print("Los siguientes son los ejercicios del punto 3, ingrese ejercicio a ver. Para salir ingrese 0")
-            print("1-devolver el doble si es par\n2-si es impar, devolver el siguiente numero \n3-devolver el triple si es multiplo de 9 y el doble si es multiplo de 3 \n4-lindo nombre\n5-El rango\n6-Vacaciones o chamba")
-            
-            ejercicio = int(input("Num. Ejercicio: "))
+            print("Hay 4 opciones para el programa de inventario: ")
+            print("1 - Agregar producto")
+            print("2 - Actualizar stock")
+            print("3 - Actualizar precio")
+            print("4 - Calcular valor inventario")
+            print("0 - Salir")
+            print("Inventario actual: " + str(inventario.items()))
+            ejercicio = int(input("Escriba su opcion: "))
             
             if(ejercicio == 0):
                 salida_ejercicio = 0
                 
             if(ejercicio == 1):
+                agregarProducto(inventario, input("Ingrese nombre del producto: "), float(input("Ingrese precio del producto: ")), int(input("Ingrese cantidad del producto: ")))
                 
-                input("Presione enter para continuar")
+            if(ejercicio == 2):
+                actualizarStock(inventario, input("Ingrese nombre del producto: "), int(input("Ingrese cantidad del producto: ")))
+                
+            if(ejercicio == 3):
+                actualizarPrecios(inventario, input("Ingrese nombre del producto: "), float(input("Ingrese precio del producto: ")))
+                
+            if(ejercicio == 4):
+                print("El precio del inventario total es: " + str(calcularValorInventario(inventario)))
+        
+                input("Presione enter para seguir")
+     
+          

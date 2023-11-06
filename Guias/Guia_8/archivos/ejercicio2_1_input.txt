@@ -1,0 +1,4 @@
+no es comentario
+#Esto si es un comentario
+           # Comentario movido
+texto     #Pero con comentario que no se borra
